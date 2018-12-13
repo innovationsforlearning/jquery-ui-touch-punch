@@ -10,8 +10,8 @@
  */
 (function ($) {
 
-  // Detect touch support
-  $.support.touch = 'ontouchend' in document;
+  // Detect touch support // edited as per https://github.com/furf/jquery-ui-touch-punch/issues/309#issuecomment-437740949
+  $.support.touch = ('ontouchstart' in document || 'ontouchstart' in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0);
 
   // Ignore browsers without touch support
   if (!$.support.touch) {
